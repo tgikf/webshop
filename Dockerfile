@@ -10,11 +10,9 @@ RUN apt-get update
 
 RUN apt-get install -y python
 
-RUN npm install -g npm@8.1.2
+RUN yarn add @medusajs/medusa-cli@latest
 
-RUN npm install -g @medusajs/medusa-cli@latest
-
-RUN npm install
+RUN yarn
 
 COPY . .
 
