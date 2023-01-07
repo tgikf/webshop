@@ -9,7 +9,6 @@ COPY yarn.* .
 RUN apt-get update
 
 RUN apt-get install -y python
-
 RUN yarn add @medusajs/medusa-cli@latest
 
 RUN yarn

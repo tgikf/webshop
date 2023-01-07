@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Run migrations to ensure the database is updated
-medusa migrations run
+npx medusa migrations run
 
 #Start development environment
-medusa develop
+npx medusa develop
