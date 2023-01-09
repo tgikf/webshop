@@ -5,7 +5,18 @@ module.exports = withStoreConfig({
   features: store.features,
   reactStrictMode: true,
   images: {
-    domains: ["medusa-public-images.s3.eu-west-1.amazonaws.com", "localhost"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "medusa-public-images.s3.eu-west-1.amazonaws.com",
+      },
+      {
+        protocol: "http",
+        hostname: "**",
+        port: "3000",
+        pathname: "/webshop/**",
+      },
+    ],
   },
 })
 
