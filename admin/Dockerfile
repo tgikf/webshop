@@ -4,5 +4,6 @@ COPY . .
 
 RUN yarn
 RUN yarn build
+RUN printenv
 
 CMD ["yarn", "start"]
