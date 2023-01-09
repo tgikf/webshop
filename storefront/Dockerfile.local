@@ -5,6 +5,6 @@ COPY . .
 
 RUN yarn
 RUN yarn next telemetry disable
-RUN yarn build
+#RUN yarn build
 
-ENTRYPOINT ["yarn", "start"]
+ENTRYPOINT ["./startup.sh"]

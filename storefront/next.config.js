@@ -11,6 +11,10 @@ module.exports = withStoreConfig({
         hostname: "medusa-public-images.s3.eu-west-1.amazonaws.com",
       },
       {
+        protocol: "https",
+        hostname: "alc-webshop-images.s3.ap-southeast-1.amazonaws.com",
+      },
+      {
         protocol: "http",
         hostname: "**",
         port: "3000",

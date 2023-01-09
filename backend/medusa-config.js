@@ -1,29 +1,29 @@
-const dotenv = require('dotenv')
+const dotenv = require("dotenv");
 
-let ENV_FILE_NAME = '';
+let ENV_FILE_NAME = "";
 switch (process.env.NODE_ENV) {
-	case 'production':
-		ENV_FILE_NAME = '.env.production';
-		break;
-	case 'staging':
-		ENV_FILE_NAME = '.env.staging';
-		break;
-	case 'test':
-		ENV_FILE_NAME = '.env.test';
-		break;
-	case 'development':
-	default:
-		ENV_FILE_NAME = '.env';
-		break;
+  case "production":
+    ENV_FILE_NAME = ".env.production";
+    break;
+  case "staging":
+    ENV_FILE_NAME = ".env.staging";
+    break;
+  case "test":
+    ENV_FILE_NAME = ".env.test";
+    break;
+  case "development":
+  default:
+    ENV_FILE_NAME = ".env";
+    break;
 }
 
 try {
-	dotenv.config({ path: process.cwd() + '/' + ENV_FILE_NAME });
-} catch (e) {
-}
+  dotenv.config({ path: process.cwd() + "/" + ENV_FILE_NAME });
+} catch (e) {}
 
 // CORS when consuming Medusa from admin
-const ADMIN_CORS = process.env.ADMIN_CORS || "http://localhost:7000,http://localhost:7001";
+const ADMIN_CORS =
+  process.env.ADMIN_CORS || "http://localhost:7000,http://localhost:7001";
 
 // CORS to avoid issues when consuming Medusa from a client
 const STORE_CORS = process.env.STORE_CORS || "http://localhost:8000";
@@ -44,12 +44,13 @@ const plugins = [
   `medusa-fulfillment-manual`,
   `medusa-payment-manual`,
   {
-    resolve: `medusa-file-minio`,
+    resolve: `medusa-file-s3`,
     options: {
-        endpoint: process.env.MINIO_ENDPOINT,
-        bucket: process.env.MINIO_BUCKET,
-        access_key_id: process.env.MINIO_ACCESS_KEY,
-        secret_access_key: process.env.MINIO_SECRET_KEY,
+      s3_url: process.env.S3_URL,
+      bucket: process.env.S3_BUCKET,
+      region: process.env.S3_REGION,
+      access_key_id: process.env.S3_ACCESS_KEY_ID,
+      secret_access_key: process.env.S3_SECRET_ACCESS_KEY,
     },
   },
   // Uncomment to add Stripe support.

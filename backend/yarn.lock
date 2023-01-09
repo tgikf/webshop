@@ -591,7 +591,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.20.2"
 
-"@babel/plugin-transform-classes@^7.12.1", "@babel/plugin-transform-classes@^7.16.0", "@babel/plugin-transform-classes@^7.20.2", "@babel/plugin-transform-classes@^7.9.5":
+"@babel/plugin-transform-classes@^7.12.1", "@babel/plugin-transform-classes@^7.15.4", "@babel/plugin-transform-classes@^7.20.2", "@babel/plugin-transform-classes@^7.9.5":
   version "7.20.7"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-classes/-/plugin-transform-classes-7.20.7.tgz#f438216f094f6bb31dc266ebfab8ff05aecad073"
   integrity sha512-LWYbsiXTPKl+oBlXUGlwNlJZetXD5Am+CyBdqhPsDVjM9Jc8jwBJFrKhHf900Kfk2eZG1y9MAG3UNajol7A4VQ==
@@ -1536,10 +1536,10 @@ awilix@^8.0.0:
     camel-case "^4.1.2"
     fast-glob "^3.2.12"
 
-aws-sdk@^2.1043.0:
-  version "2.1289.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1289.0.tgz#8efa68a738ce386667aeffbd8679491cfa6e458f"
-  integrity sha512-wT7SZ385NEm6X4VC1Bhf1loBZi2BDVqEET4G9I7E2tyuEdfeubPvZpCV/BgdId3qwqB4LjbMLBje18Op3zpgBA==
+aws-sdk@^2.983.0:
+  version "2.1290.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1290.0.tgz#cb4e56656cb4ad08a645cd016380df4b324f8261"
+  integrity sha512-qRrXLgK4FpkdxeagjrHuhtEEvYrvRbddTBg1I7KBuMCIhXHzSS3nEUmdZjdyMuQJEvt0BCJjwVkNh8e/5TauDQ==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -3695,13 +3695,13 @@ medusa-core-utils@^1.1.31, medusa-core-utils@^1.1.37:
     joi "^17.3.0"
     joi-objectid "^3.0.1"
 
-medusa-file-minio@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/medusa-file-minio/-/medusa-file-minio-1.1.2.tgz#9da891475d48370276a9edab5116d9430601c763"
-  integrity sha512-p2Nvml/JmwgU+D1TAb0Fte+M6MNrwx+/R1WDwZkOHy4e42EjZ3BKxyjmdfrYWUyh8fGzTDZrxPwcG3/36uJhJQ==
+medusa-file-s3@^1.1.8:
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/medusa-file-s3/-/medusa-file-s3-1.1.8.tgz#b047fe7c2194a7f6e918ac0d00f1017f881aaef0"
+  integrity sha512-uxbJhRTPKTQ+r1Qtj5HXv0E+vHX5wLmx+cEgPJiGrwTxrh6d+pnIBlLZbqETPgFLv7kfjneTFtns0BMgGTy4LA==
   dependencies:
-    "@babel/plugin-transform-classes" "^7.16.0"
-    aws-sdk "^2.1043.0"
+    "@babel/plugin-transform-classes" "^7.15.4"
+    aws-sdk "^2.983.0"
     body-parser "^1.19.0"
     express "^4.17.1"
     medusa-core-utils "^1.1.37"
