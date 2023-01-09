@@ -1,5 +1,5 @@
 #!/bin/bash
-printenv | grep NEXT
+
 #build next project and startup
-yarn next build
+yarn build --debug
 yarn start

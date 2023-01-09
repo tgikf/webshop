@@ -4,5 +4,6 @@ WORKDIR /app/storefront
 COPY . .
 
 RUN yarn
+RUN yarn next telemetry disable
 
 ENTRYPOINT ["./startup.sh"]
