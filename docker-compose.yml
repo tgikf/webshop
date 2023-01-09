@@ -64,8 +64,17 @@ services:
       NEXT_PUBLIC_MEDUSA_BACKEND_URL: http://172.17.0.1:9000
     ports:
       - "8000:8000"
-#    volumes:
-#      - .:/app/storefront
+
+  admin:
+    build:
+      context: ./admin
+      dockerfile: Dockerfile
+    image: webshop-admin:latest
+    container_name: webshop-admin-container
+    environment:
+      MEDUSA_BACKEND_URL: http://172.17.0.1:9000
+    ports:
+      - "7000:7000"
 
 volumes:
   node_modules:
