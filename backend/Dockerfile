@@ -1,9 +1,9 @@
 FROM node:17.1.0
 
-WORKDIR /app/medusa
+WORKDIR /app/backend
 
 COPY package.json .
-COPY develop.sh .
+COPY startup.sh .
 COPY yarn.* .
 
 RUN apt-get update
@@ -15,4 +15,4 @@ RUN yarn
 
 COPY . .
 
-ENTRYPOINT ["./develop.sh"]
+ENTRYPOINT ["./startup.sh"]

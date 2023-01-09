@@ -2,10 +2,10 @@ version: "3.8"
 services:
   backend:
     build:
-      context: .
-      dockerfile: Dockerfile
-    image: backend:starter
-    container_name: medusa-server-default
+      context: ./backend
+      dockerfile: ./Dockerfile
+    image: webshop-backend:latest
+    container_name: webshop-backend-container
     depends_on:
       - postgres
       - redis
@@ -16,15 +16,15 @@ services:
       JWT_SECRET: something
       COOKIE_SECRET: something
       PORT: 9000
-      MINIO_ENDPOINT: http://minio:3000
+      MINIO_ENDPOINT: http://172.17.0.1:3000
       MINIO_BUCKET: webshop
       MINIO_ACCESS_KEY: MgreVCCFpo62lTfN
       MINIO_SECRET_KEY: hPN9IrUUMDA6nshdZwr77cbakmJKxQg6
     ports:
       - "9000:9000"
-    volumes:
-      - .:/app/medusa
-      - node_modules:/app/medusa/node_modules
+#   volumes:
+#     - .:/app/medusa
+#     - node_modules:/app/medusa/node_modules
 
   postgres:
     image: postgres:10.4
@@ -51,6 +51,21 @@ services:
     image: redis
     expose:
       - 6379
+
+  storefront:
+    build:
+      context: ./storefront
+      dockerfile: Dockerfile
+    image: webshop-storefront:latest
+    container_name: webshop-storefront-container
+    depends_on:
+      - backend
+    environment:
+      NEXT_PUBLIC_MEDUSA_BACKEND_URL: http://172.17.0.1:9000
+    ports:
+      - "8000:8000"
+#    volumes:
+#      - .:/app/storefront
 
 volumes:
   node_modules:
