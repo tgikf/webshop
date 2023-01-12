@@ -10,11 +10,8 @@ const FeaturedProducts = () => {
     <div className="py-12">
       <div className="content-container py-12">
         <div className="flex flex-col items-center text-center mb-16">
-          <span className="text-base-regular text-gray-600 mb-6">
-            Latest products
-          </span>
           <p className="text-2xl-regular text-gray-900 max-w-lg mb-4">
-            Our newest styles are here to help you look your best.
+            Free Next Day Delivery for orders above S$150.
           </p>
           <UnderlineLink href="/store">Explore products</UnderlineLink>
         </div>
