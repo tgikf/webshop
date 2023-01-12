@@ -31,6 +31,8 @@ The webshop infrastructure is spread across the following providers:
 - No integration with payment providers
 - No integration with fulfillment/shipping providers
 - No search functionality
+- No email verification
+- No CMS for static content (e.g., About us, T&C, etc.)
 - Any custom APIs (complex change, if required)
 - Any event subscription functionality (complex change, if required)
 
