@@ -7,6 +7,7 @@ This is a web shop based on [Medusa.js](https://medusajs.com/). At this point it
 1. [Admin Frontend](./admin/) implemented in React (instantiated from template)
 1. PostgreSQL DB which contains all data
 1. AWS S3 Bucket which hosts static images (e.g., product images)
+1. A redis DB used as Medusa event queue (required even if not in use until [Medusa upgrade](https://github.com/medusajs/medusa/issues/1651))
 
 ## Live Instance
 
@@ -17,6 +18,7 @@ The webshop infrastructure is spread across the following providers:
 - **Railway.app** (see [pricing](https://docs.railway.app/reference/pricing))
   - Application services (Backend, Storefront, Admin Frontend)
   - PostgreSQL Database
+  - Redis Database
 
 ### Links
 
@@ -28,7 +30,6 @@ The webshop infrastructure is spread across the following providers:
 
 ## What's missing
 
-- Memory leak because of missing Redis instance (either add Redis or wait for [new Medusa version](https://github.com/medusajs/medusa/issues/1651))
 - No integration with payment providers
 - No integration with fulfillment/shipping providers
 - No search functionality
